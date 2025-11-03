@@ -16,23 +16,34 @@ public class AppAccount {
                 "MASTERCARD"
         );
 
-        SavingAccount mySavingAccount = new SavingAccount(BigDecimal.valueOf(5000));
-        mySavingAccount.setAccountName("Stefen Ly");
-        mySavingAccount.setAccountNumber("SA001");
-        mySavingAccount.setCreateDate(LocalDate.of(2023, 1, 1));
-        mySavingAccount.setInterestRate(7);
-        mySavingAccount.setCard(card);
-
-//        SavingAccount mySavingAccount = new SavingAccount(
-//                "Stefen Ly",
-//                "SA001",
-//                5000.0,
-//                LocalDate.of(2023, 1, 1),
-//                7,
-//                card
-//        );
+        Account account;
 
         do {
+            System.out.println("Process transaction");
+            System.out.println("1. Saving");
+            System.out.println("2. Payroll");
+            System.out.print("Enter option: ");
+            int menu = Integer.parseInt(scanner.nextLine());
+
+            switch (menu) {
+                case 1 -> account = new SavingAccount(
+                        "CHAN CHHAYA",
+                        "99990000",
+                        BigDecimal.valueOf(5000),
+                        LocalDate.of(2023,1,1),
+                        10,
+                        card
+                );
+                case 2 -> account  = new PayrollAccount(
+                        "CHAN CHHAYA",
+                        "99990000",
+                        BigDecimal.valueOf(5000),
+                        LocalDate.of(2023,1,1),
+                        10
+                );
+                default -> throw new IllegalStateException();
+            }
+
             System.out.println("Welcome to bank app");
             System.out.println("-------------------");
             System.out.println("1. Check balance");
@@ -44,16 +55,16 @@ public class AppAccount {
             int option = Integer.parseInt(scanner.nextLine());
             System.out.println("-------------------");
             switch (option){
-                case 1 -> mySavingAccount.checkBalance();
+                case 1 -> account.checkBalance();
                 case 2 -> {
                     System.out.print("Enter amount to deposit: ");
                     double amount = Double.parseDouble(scanner.nextLine());
-                    mySavingAccount.deposit(BigDecimal.valueOf(amount));
+                    account.deposit(BigDecimal.valueOf(amount));
                 }
                 case 3 -> {
                     System.out.println("Enter amount to withdraw: ");
                     double amount = Double.parseDouble(scanner.nextLine());
-                    mySavingAccount.withdraw(BigDecimal.valueOf(amount));
+                    account.withdraw(BigDecimal.valueOf(amount));
                 }
                 case 0 -> System.exit(0);
             }

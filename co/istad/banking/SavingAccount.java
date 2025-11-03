@@ -30,8 +30,8 @@ public class SavingAccount extends Account {
         super(initBalance);
     }
 
-    public SavingAccount(String accountName, String accountNumber, double balance, LocalDate createDate, float interestRate, Card card) {
-        super(accountName, accountNumber, BigDecimal.valueOf(balance), createDate);
+    public SavingAccount(String accountName, String accountNumber, BigDecimal balance, LocalDate createDate, float interestRate, Card card) {
+        super(accountName, accountNumber, balance, createDate);
         this.interestRate = interestRate;
         this.card = card;
     }
