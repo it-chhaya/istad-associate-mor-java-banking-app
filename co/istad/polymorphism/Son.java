@@ -11,4 +11,9 @@ public class Son extends Father {
     public void study() {
         System.out.println("Son studies not good");
     }
+
+    @Override
+    public void run() {
+        System.out.println("Son is running");
+    }
 }
