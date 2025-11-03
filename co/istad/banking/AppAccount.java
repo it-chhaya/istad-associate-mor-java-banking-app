@@ -39,7 +39,8 @@ public class AppAccount {
                         "99990000",
                         BigDecimal.valueOf(5000),
                         LocalDate.of(2023,1,1),
-                        10
+                        10,
+                        card
                 );
                 default -> throw new IllegalStateException();
             }

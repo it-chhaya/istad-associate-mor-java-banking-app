@@ -3,7 +3,7 @@ package practice.co.istad.banking;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Account {
+public abstract class Account {
 
     private String accountName;
     private String accountNumber;

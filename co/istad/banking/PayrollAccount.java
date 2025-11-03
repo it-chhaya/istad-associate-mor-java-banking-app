@@ -9,9 +9,10 @@ public class PayrollAccount extends Account {
 
     Card card;
 
-    public PayrollAccount(String accountName, String accountNumber, BigDecimal balance, LocalDate createDate, float tax) {
+    public PayrollAccount(String accountName, String accountNumber, BigDecimal balance, LocalDate createDate, float tax, Card card) {
         super(accountName, accountNumber, balance, createDate);
         this.tax = tax;
+        this.card = card;
     }
 
     @Override

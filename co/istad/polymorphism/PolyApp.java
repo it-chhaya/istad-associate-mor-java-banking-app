@@ -2,10 +2,10 @@ package practice.co.istad.polymorphism;
 
 public class PolyApp {
     public static void main(String[] args) {
-        Father obj = new Daughter();
-        obj.sing();
+        Father obj = new Son();
+        obj.study();
 
-        obj = new Son();
-        obj.sing();
+        obj = new Daughter();
+        obj.study();
     }
 }
